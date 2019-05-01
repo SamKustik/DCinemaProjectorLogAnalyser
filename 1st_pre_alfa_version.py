@@ -14,10 +14,8 @@ errnum_list = []  # dictionary with all the errors
 # in this loop we will find all the errors
 for line in open('ProjectorLog.txt', 'r'):
     for c in line:
-        if logfilecontent[charcount] == 'e':
-            if logfilecontent[charcount+1] == 'r':
-                if logfilecontent[charcount+2] == 'r':
-                    errorcount += 1
+        if logfilecontent[charcount] == 'err':
+            errorcount += 1
         # this statement will find all the error numbers
         if logfilecontent[charcount] == '#' and logfilecontent[charcount+1] == '5':
             print(line)
