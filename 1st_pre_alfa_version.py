@@ -36,10 +36,8 @@ choosed = input('print \'y\' or \'n\': ')
 if choosed == 'y':
     for line in open('ProjectorLog.txt', 'r'):
         for c in line:
-            if logfilecontent[charcount] == 'e':
-                if logfilecontent[charcount+1] == 'r':
-                    if logfilecontent[charcount+2] == 'r':
-                        print(line)
+            if logfilecontent[charcount:charcount+3] == 'e':
+                print(line)
             charcount += 1
 else:
     print('OK, so we are closing the file.')
