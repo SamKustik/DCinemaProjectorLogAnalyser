@@ -80,4 +80,6 @@ print("Your projector lens type is " + wordfinder(parameterscontent, 'Lens descr
 
 parameters.close()
 
+print('test')
+
 print('The logfile was successfully opened and closed.')
