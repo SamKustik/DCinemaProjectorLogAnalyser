@@ -82,6 +82,6 @@ print ("Your projector lens home and return function status: " + wordfinder(para
 
 parameters.close()
 
-print('test')
+print('testtesttest')
 
 print('The logfile was successfully opened and closed.')
