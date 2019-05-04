@@ -78,6 +78,8 @@ print("Your projector lamp type is " + wordfinder(parameterscontent, 'Lamp runti
 
 print("Your projector lens type is " + wordfinder(parameterscontent, 'Lens description', 16, 18, 78, '\"'))
 
+print ("Your projector lens home and return function status" + wordfinder(parameterscontent, "Lens_homing_history status", 26, 28, 60, '\"'))
+
 parameters.close()
 
 print('test')

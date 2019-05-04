@@ -1,0 +1,24 @@
+<diagnosticspackage version="1.00">
+ <Projector runtime="1709" Identifier="DPC-80" UN_code="853F-C366-82A8-0339" serial_number="1198500212">
+  <Mediablock type="BARCO IMB R765534"/>
+  <Presets BUTTON_02="SCOPE" BUTTON_03="3D_FLAT" BUTTON_04="3D_SCOPE" BUTTON_05="PRESHOW_FLAT" BUTTON_06="EVENT_FLAT" BUTTON_07="PRESHOW_SCOPE" BUTTON_08="EVENT_SCOPE" BUTTON_11="DVI_A_2048" BUTTON_09="ACS" BUTTON_12="DVI_B_2048" BUTTON_13="HDTV_A_1920" BUTTON_14="HDTV_B_1920" BUTTON_15="3D_DOLBY_FLAT" BUTTON_16="3D_DOLBY_SCOPE" BUTTON_01="FLAT"/>
+  <Lamp runtime="135" description="USHIO(R) DXL-65SC" article_number="R1010000049" serial_number="tc4699p"/>
+  <Lens description="INVISION(R) 1.2&quot; DC2K 1.8-2.8 DC4K 1.63-2.53"/>
+  <Lens_homing_history status="Finished successfully" lens="R9855945" time="Wed May 28 14:34:32 2014"/>
+  <Keys SNMP="valid"/>
+  <Communication IP_subnet_mask="255.255.255.0  " IP_default_gateway="192.168.1.129  " IP_address="192.168.1.134  "/>
+  <SecurityKeys Key1="D4000015F58B8101" Key2="????????????????" Key3="????????????????" Key4="????????????????" Key5="????????????????"/>
+ </Projector>
+ <Communicator Version="5.6.0"/>
+ <LocalSystem OS="Windows">
+  <Communication1 IP_subnet_mask="" IP_address="169.254.127.51"/>
+  <Communication2 IP_subnet_mask="" IP_address="169.254.207.187"/>
+  <Communication3 IP_subnet_mask="" IP_address="169.254.148.239"/>
+  <Communication4 IP_subnet_mask="" IP_address="169.254.78.36"/>
+  <Communication5 IP_subnet_mask="255.255.255.0" IP_address="192.168.1.152"/>
+  <Communication6 IP_subnet_mask="255.255.255.0" IP_address="192.168.56.1"/>
+  <Communication7 IP_subnet_mask="255.255.255.0" IP_address="192.168.65.1"/>
+  <Communication8 IP_subnet_mask="255.255.255.0" IP_address="192.168.220.1"/>
+ </LocalSystem>
+ <CinemaFrontEnd/>
+</diagnosticspackage>
