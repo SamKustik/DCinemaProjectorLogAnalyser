@@ -86,6 +86,13 @@ print("Your projector lens type is " + wordfinder(parameterscontent, 'Lens descr
 
 print ("Your projector lens home and return function status: " + wordfinder(parameterscontent, "Lens_homing_history status", 26, 28, 60, '\"'))
 
+if wordfinder(parameterscontent, 'Identifier', 10, 12, 30, '\"')[0:3] == "DPC" or wordfinder(parameterscontent, 'Identifier', 10, 12, 30, '\"')[0:3] == "CMC":
+    print("Your projectormake is Cinemeccanica")
+elif wordfinder(parameterscontent, 'Identifier', 10, 12, 30, '\"')[0:3] == "DP2" or wordfinder(parameterscontent, 'Identifier', 10, 12, 30, '\"')[0:3] == "DP4":
+    print("Your projectormake is Barco")
+elif wordfinder(parameterscontent, 'Identifier', 10, 12, 30, '\"')[0:3] == "DCP":
+    print("Your projectormake is Kinoton")
+
 parameters.close()
 
 print('\nAnd now we will check cinema front end status...\n')
