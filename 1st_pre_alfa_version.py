@@ -53,6 +53,7 @@ logfile.close()
 def wordfinder(z, x, q, v, b, n):
     ch = 0
     m = ''
+    counter = 0
     for u in z:
         if z[ch:ch + q] == x:
             for t in z[ch + v:ch + b]:
@@ -60,6 +61,9 @@ def wordfinder(z, x, q, v, b, n):
                     m = m + t
                 elif t == n:
                     break
+            counter = 1
+            if counter == 1:
+                break
         ch += 1
     return(m)
 
@@ -73,6 +77,8 @@ parameterscontent = parameters.read()
 print("Your projector runtime is " + wordfinder(parameterscontent, 'Projector runtime', 17, 19, 24, '\"'))
 
 print("Your projector model is " + wordfinder(parameterscontent, 'Identifier', 10, 12, 30, '\"'))
+
+print("Your projector serial number is " + wordfinder(parameterscontent, 'serial_number', 13, 15, 35, '\"'))
 
 print("Your projector lamp type is " + wordfinder(parameterscontent, 'Lamp runtime', 12, 14, 20, '\"'))
 
