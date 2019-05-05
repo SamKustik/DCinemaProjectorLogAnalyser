@@ -34,7 +34,7 @@ print('If you want - we will display ALL the errors')
 charcount = 0
 choosed = input('print \'y\' or \'n\': ')
 if choosed == 'y':
-    for line in open('ProjectorLog.txt', 'r'):
+    for line in logfile:
         for c in line:
             if logfilecontent[charcount:charcount+3] == 'err':
                 print(line)
@@ -80,7 +80,7 @@ print("Your projector model is " + wordfinder(parameterscontent, 'Identifier', 1
 
 print("Your projector serial number is " + wordfinder(parameterscontent, 'serial_number', 13, 15, 35, '\"'))
 
-print("Your projector lamp type is " + wordfinder(parameterscontent, 'Lamp runtime', 12, 14, 20, '\"'))
+print("Your projector lamp runtime is " + wordfinder(parameterscontent, 'Lamp runtime', 12, 14, 20, '\"'))
 
 print("Your projector lens type is " + wordfinder(parameterscontent, 'Lens description', 16, 18, 78, '\"'))
 
@@ -90,7 +90,10 @@ parameters.close()
 
 print('\nAnd now we will check cinema front end status...\n')
 
-for line in open('CinemaFrontEndStatus.txt', 'r'):
+CinemaFrontEndFile = open('CinemaFrontEndStatus.txt', 'r')
+
+for line in CinemaFrontEndFile:
     print(line)
+CinemaFrontEndFile.close()
 
 print('The logfile was successfully opened and closed.')
