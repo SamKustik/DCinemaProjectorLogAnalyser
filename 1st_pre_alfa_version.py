@@ -1,5 +1,5 @@
 # Log analyser for some digital cinema projectors
-# ver.0.00.00.10
+# ver.0.00.00.11
 # written by Samvel
 
 from typing import Set
@@ -88,6 +88,9 @@ print ("Your projector lens home and return function status: " + wordfinder(para
 
 parameters.close()
 
-print('testtesttest')
+print('\nAnd now we will check cinema front end status...\n')
+
+for line in open('CinemaFrontEndStatus.txt', 'r'):
+    print(line)
 
 print('The logfile was successfully opened and closed.')

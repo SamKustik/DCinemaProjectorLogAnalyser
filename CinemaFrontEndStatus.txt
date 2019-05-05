@@ -1,0 +1,11 @@
+Link decryptor system status: Ok
+Link decryptor self test status: Ok
+Link decryptor HDSDI Link A: No source
+Link decryptor HDSDI Link B: No source
+Link decryptor - Marriage status: Ok
+ICP System status: Ok
+ICP Self test status: Ok
+ICP Load release package status: Ok
+ICP Install release package status: Ok
+ICP FMT Operation mode status: Ok
+ICP General operation mode status: Ok
