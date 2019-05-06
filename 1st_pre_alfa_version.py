@@ -10,6 +10,7 @@ logfilecontent = logfile.read()
 print('But now I\'m gonna count the number of errors')
 errorcount = 0  # overall number of errors in logs
 charcount = 0
+errnum = ""
 errnum_list = []  # dictionary with all the errors
 # in this loop we will find all the errors
 for line in open('ProjectorLog.txt', 'r'):
@@ -53,7 +54,6 @@ logfile.close()
 def wordfinder(z, x, q, v, b, n):
     ch = 0
     m = ''
-    counter = 0
     for u in z:
         if z[ch:ch + q] == x:
             for t in z[ch + v:ch + b]:
@@ -65,7 +65,7 @@ def wordfinder(z, x, q, v, b, n):
             if counter == 1:
                 break
         ch += 1
-    return(m)
+    return m
 
 
 # next few lines of code are defining several parameters of the projector
@@ -84,7 +84,7 @@ print("Your projector lamp runtime is " + wordfinder(parameterscontent, 'Lamp ru
 
 print("Your projector lens type is " + wordfinder(parameterscontent, 'Lens description', 16, 18, 78, '\"'))
 
-print ("Your projector lens home and return function status: " + wordfinder(parameterscontent, "Lens_homing_history status", 26, 28, 60, '\"'))
+print("Your projector lens home and return function status: " + wordfinder(parameterscontent, "Lens_homing_history status", 26, 28, 60, '\"'))
 
 if wordfinder(parameterscontent, 'Identifier', 10, 12, 30, '\"')[0:3] == "DPC" or wordfinder(parameterscontent, 'Identifier', 10, 12, 30, '\"')[0:3] == "CMC":
     print("Your projectormake is Cinemeccanica")
