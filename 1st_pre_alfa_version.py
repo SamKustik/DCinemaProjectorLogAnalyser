@@ -1,5 +1,5 @@
 # Log analyser for some digital cinema projectors
-# ver.0.00.00.11
+# ver.0.00.00.12
 # written by Samvel
 
 from typing import Set
@@ -35,7 +35,7 @@ print('If you want - we will display ALL the errors')
 charcount = 0
 choosed = input('print \'y\' or \'n\': ')
 if choosed == 'y':
-    for line in logfile:
+    for line in open('ProjectorLog.txt', 'r'):
         for c in line:
             if logfilecontent[charcount:charcount+3] == 'err':
                 print(line)
@@ -46,26 +46,13 @@ logfile.close()
 
 
 # new function that will find some keywords in parameters file to reveal all the projector info
-# I will add some clarity for variables a little bit later
-# but believe me - it is working for now
-# yes - there is some bugs
-# but this is pre-pre-pre-alfa version and at present stage it is working normally
-# I'm working on optimization and - SURPRISE - GUI version on Qt
-def wordfinder(z, x, q, v, b, n):
-    ch = 0
-    m = ''
-    for u in z:
-        if z[ch:ch + q] == x:
-            for t in z[ch + v:ch + b]:
-                if t != n:
-                    m = m + t
-                elif t == n:
-                    break
-            counter = 1
-            if counter == 1:
-                break
-        ch += 1
-    return m
+
+def wordfinder2(text, keyword):
+    start_position = text.find(keyword)
+    start_quote = text.find('"', start_position) + 1
+    stop_quote = text.find('"', start_quote)
+    parameter = text[start_quote:stop_quote]
+    return parameter
 
 
 # next few lines of code are defining several parameters of the projector
@@ -74,23 +61,18 @@ def wordfinder(z, x, q, v, b, n):
 parameters = open('Parameters.txt', 'r')  # opening of standard Parameters file
 parameterscontent = parameters.read()
 
-print("Your projector runtime is " + wordfinder(parameterscontent, 'Projector runtime', 17, 19, 24, '\"'))
+print("Your projector runtime is " + wordfinder2(parameterscontent, 'Projector runtime'))
+print("Your projector model is " + wordfinder2(parameterscontent, 'Identifier'))
+print("Your projector serial number is " + wordfinder2(parameterscontent, 'serial_number'))
+print("Your projector lamp runtime is " + wordfinder2(parameterscontent, 'Lamp runtime'))
+print("Your projector lens type is " + wordfinder2(parameterscontent, 'Lens description'))
+print("Your projector lens home and return function status: " + wordfinder2(parameterscontent, "Lens_homing_history status"))
 
-print("Your projector model is " + wordfinder(parameterscontent, 'Identifier', 10, 12, 30, '\"'))
-
-print("Your projector serial number is " + wordfinder(parameterscontent, 'serial_number', 13, 15, 35, '\"'))
-
-print("Your projector lamp runtime is " + wordfinder(parameterscontent, 'Lamp runtime', 12, 14, 20, '\"'))
-
-print("Your projector lens type is " + wordfinder(parameterscontent, 'Lens description', 16, 18, 78, '\"'))
-
-print("Your projector lens home and return function status: " + wordfinder(parameterscontent, "Lens_homing_history status", 26, 28, 60, '\"'))
-
-if wordfinder(parameterscontent, 'Identifier', 10, 12, 30, '\"')[0:3] == "DPC" or wordfinder(parameterscontent, 'Identifier', 10, 12, 30, '\"')[0:3] == "CMC":
+if wordfinder2(parameterscontent, 'Identifier')[0:3] == "DPC" or wordfinder2(parameterscontent, 'Identifier')[0:3] == "CMC":
     print("Your projectormake is Cinemeccanica")
-elif wordfinder(parameterscontent, 'Identifier', 10, 12, 30, '\"')[0:3] == "DP2" or wordfinder(parameterscontent, 'Identifier', 10, 12, 30, '\"')[0:3] == "DP4":
+elif wordfinder2(parameterscontent, 'Identifier')[0:3] == "DP2" or wordfinder2(parameterscontent, 'Identifier')[0:3] == "DP4":
     print("Your projectormake is Barco")
-elif wordfinder(parameterscontent, 'Identifier', 10, 12, 30, '\"')[0:3] == "DCP":
+elif wordfinder2(parameterscontent, 'Identifier')[0:3] == "DCP":
     print("Your projectormake is Kinoton")
 
 parameters.close()
